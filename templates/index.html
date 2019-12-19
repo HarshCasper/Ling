@@ -1,0 +1,32 @@
+{% extends "bootstrap/base.html" %}
+{% block content %}
+
+<div class="container">
+  <div class="jumbotron" style="background-color:#e90a0a !important;">
+    <h2 style="color:#fff;">Ling</h2>      
+    <p style="color:#fff;">A Machine Learning Application deployed using Flask and a Naive Bayes Classifier which can predict your gender using your Name.</p>
+  </div>          
+</div>
+<div class="panel-group">
+  <div class="container">
+    <div class="panel panel-primary">
+      <div class="panel-heading" style="background-color:#9900ff ">Enter Your Name</div>
+      <div class="panel-body">
+      	<form action="{{ url_for('predict')}}" method="POST">
+			<input type="text" name="namequery">
+			<button type="submit" class="btn btn-primary">Predict the Gender!</button>
+        </form>
+      </div>
+      </div>
+    </div>
+    <footer class="container text-center footer">
+        <p class="footerp" style="margin-top:30px; color:black; font-size:15px">Made with <span style="color:red"> &#9829 </span> by <a href="https://freecodecamp.com/skywalker212" style="text-decoration:none" target="_blank">Harsh Bardhan Mishra</a></p>
+      </footer>
+{% endblock %}
+
+{% block styles %}
+{{super()}} 
+<link rel="stylesheet"
+      href="{{url_for('.static', filename='css/styles.css')}}">
+{% endblock %}
+

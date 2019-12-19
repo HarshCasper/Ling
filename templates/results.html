@@ -1,0 +1,74 @@
+{% extends "bootstrap/base.html" %}
+{% block content %}
+
+
+
+<div class="container">
+  <div class="jumbotron" style="background-color:#e90a0a !important;">
+    <h2 style="color:#fff;">Gender Classifier</h2>      
+    <p style="color:#fff;">Using Machine Learning to Classify Gender</p>
+  </div>
+  <p>
+    How does it achieve the same? 
+
+    Ling Application uses Machine Learning and Statistical Tools to build a Model which can predict your Gender. The Application uses Naive Bayes Classifier
+    and Scikit-Learn to develop the Model and the model is persisted using Pickle. A Flask Micro-Framework is used to create an Application Programming
+    Interface (API) which accepts local HTTP Requests and deploy our Application.
+
+
+
+  </p>           
+</div>
+
+<div class="card text-center">
+<div class="container">
+  <div class="card-header">
+    Results
+  </div>
+  <div class="card-body" style="background-color:#9900ff;">
+    <hr/>
+    <p class="card-text"><div class="alert alert-danger" role="alert">
+  Give Name: {{ name }}
+</div></p>
+
+<!-- Main ML Prediction Display Here -->
+    {% if prediction ==  0 %}
+    <p class="card-text"><div class="alert alert-danger" role="alert">
+  Predicted Gender: Female
+</div></p>
+   <a href="#" class="btn btn-danger">Run Another Query!</a>
+     {% elif prediction == 1 %}
+  
+	<p class="card-text"><div class="alert alert-danger" role="alert">
+      Predicted Gender: Male
+
+      
+</div></p>
+
+    <a href="#" class="btn btn-primary">Run Another Query!</a>
+    {% endif%}
+  </div>
+
+
+
+<!-- Main ML Prediction Display Ends Here -->
+  <div class="card-footer text-muted">
+   
+  </div>
+</div>
+</div>
+
+  
+<footer class="container text-center footer">
+    <p class="footerp" style="margin-top:30px; color:black; font-size:15px">Made with <span style="color:red"> &#9829 </span> by <a href="https://freecodecamp.com/skywalker212" style="text-decoration:none" target="_blank">Harsh Bardhan Mishra</a></p>
+  </footer>
+    
+
+
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet"
+      href="{{url_for('.static', filename='css/styles.css')}}">
+{% endblock %}
