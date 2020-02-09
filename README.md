@@ -20,6 +20,10 @@
 
 - Naive Bayes Classifier: Naive Bayes is a probabilistic machine learning algorithm based on the Bayes Theorem, used in a wide variety of classification tasks. 
 
+## Application Programming Interface 
+
+The API for Ling has been developed on Swagger UI and can be viewed [here](https://github.com/HarshCasper/Ling-API).
+
 ## LICENSE
 
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/HarshCasper/Ling/blob/master/LICENSE) file for details.
